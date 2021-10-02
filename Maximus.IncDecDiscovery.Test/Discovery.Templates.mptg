@@ -1,0 +1,76 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance3d5876a2e98b4569931758d52012d10f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>VirtualMachineEmulator.Delete.Discovery</Id>
+        <DisplayName>VirtualMachine Emulator Delete Discovery</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;30&lt;/IntervalSeconds&gt;&lt;SyncTime /&gt;&lt;sourceId&gt;$MPElement[Name='Maximus.IncDecDiscovery.VirtualMachineEmulator.AddUpdate.Discovery']$&lt;/sourceId&gt;&lt;managedEntityId&gt;$Target/Host/Id$&lt;/managedEntityId&gt;&lt;VCId&gt;$Target/Host/Property[Type="Maximus.IncDecDiscovery.vCenterEmulator"]/ObjectKey$&lt;/VCId&gt;&lt;VMId&gt;$Target/Property[Type="Maximus.IncDecDiscovery.VirtualMachineEmulator"]/VMKey$&lt;/VMId&gt;</DataSourceConfig>
+        <DataSourceType>Maximus.IncDecDiscovery.VirtualMachineEmulator.Delete.Discovery.DataSource</DataSourceType>
+        <Target>Maximus.IncDecDiscovery.VirtualMachineEmulator</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance694dd345f24c495881df406952eeb75e" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>VirtualMachineEmulator.AddUpdate.Discovery</Id>
+        <DisplayName>VirtualMachine Emulator Add Update Discovery</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;30&lt;/IntervalSeconds&gt;&lt;SyncTime /&gt;&lt;!-- $MPElement[Name='Maximus.IncDecDiscovery.VirtualMachineEmulator.AddUpdate.Discovery']$ --&gt;&lt;sourceId&gt;$MPElement$&lt;/sourceId&gt;&lt;managedEntityId&gt;$Target/Id$&lt;/managedEntityId&gt;&lt;VCId&gt;$Target/Property[Type="Maximus.IncDecDiscovery.vCenterEmulator"]/ObjectKey$&lt;/VCId&gt;</DataSourceConfig>
+        <DataSourceType>Maximus.IncDecDiscovery.VirtualMachineEmulator.AddUpdate.Discovery.DataSource</DataSourceType>
+        <Target>Maximus.IncDecDiscovery.vCenterEmulator</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance20ed8142e25f4a3d84d2b4c44849226b" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>vCenterEmulator.Discovery</Id>
+        <DisplayName>vCenter Emulator Discovery</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;30&lt;/IntervalSeconds&gt;&lt;SyncTime /&gt;&lt;sourceId&gt;$MPElement$&lt;/sourceId&gt;&lt;managedEntityId&gt;$Target/Id$&lt;/managedEntityId&gt;</DataSourceConfig>
+        <DataSourceType>Maximus.IncDecDiscovery.vCenterEmulator.Discovery.DataSource</DataSourceType>
+        <Target>SC!Microsoft.SystemCenter.AllManagementServersPool</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instancef4670b929da04640bbdca8d4227e8b1b" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>VirtualMachineEmulator.Delete.NotWorking.Discovery</Id>
+        <DisplayName>VirtualMachine Emulator Delete Discovery (Not working)</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;30&lt;/IntervalSeconds&gt;&lt;SyncTime /&gt;&lt;sourceId&gt;$MPElement$&lt;/sourceId&gt;&lt;managedEntityId&gt;$Target/Id$&lt;/managedEntityId&gt;&lt;VCId&gt;$Target/Host/Property[Type="Maximus.IncDecDiscovery.vCenterEmulator"]/ObjectKey$&lt;/VCId&gt;&lt;VMId&gt;$Target/Property[Type="Maximus.IncDecDiscovery.VirtualMachineEmulator"]/VMKey$&lt;/VMId&gt;</DataSourceConfig>
+        <DataSourceType>Maximus.IncDecDiscovery.VirtualMachineEmulator.Delete.Discovery.DataSource</DataSourceType>
+        <Target>Maximus.IncDecDiscovery.VirtualMachineEmulator</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

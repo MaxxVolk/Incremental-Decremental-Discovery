@@ -1,0 +1,9 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Resources>
+    <DeployableAssembly ID="Maximus.IncDecDiscovery.Modules.DeployableAssembly" Accessibility="Public" HasNullStream="false"
+                        FileName="Maximus.IncDecDiscovery.Modules.dll"
+                        QualifiedName="Maximus.IncDecDiscovery.Modules, Version=1.0.0.5, Culture=neutral, PublicKeyToken=4dc461a297d0c0c3">
+      <Dependency ID="MBL!Maximus.Base.Library.ManagedWorkflowBase.DeployableAssembly"/>
+    </DeployableAssembly>
+  </Resources>
+</ManagementPackFragment>

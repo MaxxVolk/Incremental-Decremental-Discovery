@@ -1,0 +1,20 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Maximus.IncDecDiscovery.vCenterEmulator" Base="System!System.Entity" Abstract="false" Hosted="false" Accessibility="Public">
+          <Property ID="ObjectKey" Type="string" Key="true"/>
+        </ClassType>
+        <ClassType ID="Maximus.IncDecDiscovery.VirtualMachineEmulator" Base="System!System.Entity" Abstract="false" Hosted="true" Accessibility="Public">
+          <Property ID="VMKey" Type="string" Key="true"/>
+        </ClassType>
+      </ClassTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="Maximus.IncDecDiscovery.vCenterEmulator_hosts_VirtualMachineEmulator" Base="System!System.Hosting" Accessibility="Public">
+          <Source ID="vCenterEmulator" Type="Maximus.IncDecDiscovery.vCenterEmulator"/>
+          <Target ID="VirtualMachineEmulator" Type="Maximus.IncDecDiscovery.VirtualMachineEmulator"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

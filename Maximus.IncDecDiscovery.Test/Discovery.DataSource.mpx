@@ -1,0 +1,99 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <ModuleTypes>
+      <DataSourceModuleType ID="Maximus.IncDecDiscovery.vCenterEmulator.Discovery.DataSource" Accessibility="Internal">
+        <Configuration>
+          <xsd:element minOccurs="1" name="IntervalSeconds" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="SyncTime" type="xsd:string" />
+          <xsd:element minOccurs="1" name="sourceId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="managedEntityId" type="xsd:string" />
+        </Configuration>
+        <OverrideableParameters />
+        <ModuleImplementation>
+          <Composite>
+            <MemberModules>
+              <DataSource ID="DS_Scheduler" TypeID="System!System.SimpleScheduler">
+                <IntervalSeconds>$Config/IntervalSeconds$</IntervalSeconds>
+                <SyncTime>$Config/SyncTime$</SyncTime>
+              </DataSource>
+              <ProbeAction ID="PA_VCDiscovery" TypeID="Maximus.IncDecDiscovery.vCenterEmulator.Discovery.ProbeAction">
+                <sourceId>$Config/sourceId$</sourceId>
+                <managedEntityId>$Config/managedEntityId$</managedEntityId>
+              </ProbeAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="PA_VCDiscovery">
+                <Node ID="DS_Scheduler" />
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+      </DataSourceModuleType>
+      <DataSourceModuleType ID="Maximus.IncDecDiscovery.VirtualMachineEmulator.Delete.Discovery.DataSource" Accessibility="Internal">
+        <Configuration>
+          <xsd:element minOccurs="1" name="IntervalSeconds" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="SyncTime" type="xsd:string" />
+          <xsd:element minOccurs="1" name="sourceId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="managedEntityId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="VCId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="VMId" type="xsd:string" />
+        </Configuration>
+        <OverrideableParameters />
+        <ModuleImplementation>
+          <Composite>
+            <MemberModules>
+              <DataSource ID="DS_Scheduler" TypeID="System!System.SimpleScheduler">
+                <IntervalSeconds>$Config/IntervalSeconds$</IntervalSeconds>
+                <SyncTime>$Config/SyncTime$</SyncTime>
+              </DataSource>
+              <ProbeAction ID="PA_VMDDiscovery" TypeID="Maximus.IncDecDiscovery.VirtualMachineEmulator.Delete.Discovery.ProbeAction">
+                <sourceId>$Config/sourceId$</sourceId>
+                <managedEntityId>$Config/managedEntityId$</managedEntityId>
+                <VCId>$Config/VCId$</VCId>
+                <VMId>$Config/VMId$</VMId>
+              </ProbeAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="PA_VMDDiscovery">
+                <Node ID="DS_Scheduler" />
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+      </DataSourceModuleType>
+      <DataSourceModuleType ID="Maximus.IncDecDiscovery.VirtualMachineEmulator.AddUpdate.Discovery.DataSource" Accessibility="Internal">
+        <Configuration>
+          <xsd:element minOccurs="1" name="IntervalSeconds" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="SyncTime" type="xsd:string" />
+          <xsd:element minOccurs="1" name="sourceId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="managedEntityId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="VCId" type="xsd:string" />
+        </Configuration>
+        <OverrideableParameters />
+        <ModuleImplementation>
+          <Composite>
+            <MemberModules>
+              <DataSource ID="DS_Scheduler" TypeID="System!System.SimpleScheduler">
+                <IntervalSeconds>$Config/IntervalSeconds$</IntervalSeconds>
+                <SyncTime>$Config/SyncTime$</SyncTime>
+              </DataSource>
+              <ProbeAction ID="PA_VMAUDiscovery" TypeID="Maximus.IncDecDiscovery.VirtualMachineEmulator.AddUpdate.Discovery.ProbeAction">
+                <sourceId>$Config/sourceId$</sourceId>
+                <managedEntityId>$Config/managedEntityId$</managedEntityId>
+                <VCId>$Config/VCId$</VCId>
+              </ProbeAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="PA_VMAUDiscovery">
+                <Node ID="DS_Scheduler" />
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+      </DataSourceModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

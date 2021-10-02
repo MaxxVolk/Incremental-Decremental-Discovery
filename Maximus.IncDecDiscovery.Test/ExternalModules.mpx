@@ -1,0 +1,54 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <ModuleTypes>
+      <ProbeActionModuleType ID="Maximus.IncDecDiscovery.vCenterEmulator.Discovery.ProbeAction" Accessibility="Internal">
+        <Configuration>
+          <xsd:element minOccurs="1" name="sourceId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="managedEntityId" type="xsd:string" />
+        </Configuration>
+        <OverrideableParameters />
+        <ModuleImplementation>
+          <Managed>
+            <Assembly>Maximus.IncDecDiscovery.Modules.DeployableAssembly</Assembly>
+            <Type>Maximus.IncDecDiscovery.Modules.vCenterSnapshotDiscoveryPA</Type>
+          </Managed>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+        <InputType>System!System.BaseData</InputType>
+      </ProbeActionModuleType>
+      <ProbeActionModuleType ID="Maximus.IncDecDiscovery.VirtualMachineEmulator.AddUpdate.Discovery.ProbeAction" Accessibility="Internal">
+        <Configuration>
+          <xsd:element minOccurs="1" name="sourceId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="managedEntityId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="VCId" type="xsd:string" />
+        </Configuration>
+        <OverrideableParameters />
+        <ModuleImplementation>
+          <Managed>
+            <Assembly>Maximus.IncDecDiscovery.Modules.DeployableAssembly</Assembly>
+            <Type>Maximus.IncDecDiscovery.Modules.VMAddUpdateDiscoveryPA</Type>
+          </Managed>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+        <InputType>System!System.BaseData</InputType>
+      </ProbeActionModuleType>
+      <ProbeActionModuleType ID="Maximus.IncDecDiscovery.VirtualMachineEmulator.Delete.Discovery.ProbeAction" Accessibility="Internal">
+        <Configuration>
+          <xsd:element minOccurs="1" name="sourceId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="managedEntityId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="VCId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="VMId" type="xsd:string" />
+        </Configuration>
+        <OverrideableParameters />
+        <ModuleImplementation>
+          <Managed>
+            <Assembly>Maximus.IncDecDiscovery.Modules.DeployableAssembly</Assembly>
+            <Type>Maximus.IncDecDiscovery.Modules.VMSelfRemoveDiscoveryPA</Type>
+          </Managed>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+        <InputType>System!System.BaseData</InputType>
+      </ProbeActionModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

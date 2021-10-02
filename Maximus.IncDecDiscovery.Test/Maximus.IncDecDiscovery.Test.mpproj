@@ -1,0 +1,95 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{5a7ff0ad-9a42-44ce-924b-4681360dcfd0}</ProjectGuid>
+    <RootNamespace>Maximus.IncDecDiscovery</RootNamespace>
+    <Name>Maximus.IncDecDiscovery.Test</Name>
+    <ManagementPackName>Maximus.IncDecDiscovery.Test</ManagementPackName>
+    <Version>1.0.0.0</Version>
+    <MpFrameworkVersion>v7.0.3</MpFrameworkVersion>
+    <MpFrameworkProfile>OM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <GenerateSealed>false</GenerateSealed>
+    <Company>MyCompany</Company>
+    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySigning>false</DelaySigning>
+    <AssemblyOriginatorKeyFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DelaySigning>False</DelaySigning>
+    <Company>Maximus</Company>
+    <Copyright>Copyright (c) Maximus. All rights reserved.</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>C:\Projects\SCOMAuthoring\_Key\SCOMAuthoringBook.snk</AssemblyOriginatorKeyFile>
+    <GenerateSealed>True</GenerateSealed>
+  </PropertyGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Maximus.Base.Library">
+      <HintPath>C:\Projects\SCOMAuthoring\Maximus.Base.Library\Maximus.Base.Library\bin\Release\Maximus.Base.Library.mpb</HintPath>
+      <Alias>MBL</Alias>
+      <MinVersion>1.0.0.28</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Library">
+      <Alias>SC</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Library">
+      <Alias>Windows</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Health.Library">
+      <Alias>Health</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <Alias>System</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
+      <Alias>Visualization</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assemblies.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discovery.DataSource.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discovery.Templates.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Discovery.Templates.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalModules.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ManagementPack.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Maximus.IncDecDiscovery.Modules\Maximus.IncDecDiscovery.Modules.csproj">
+      <Name>Maximus.IncDecDiscovery.Modules</Name>
+      <Project>{9177db9a-40a6-4a68-b1ea-4cd6413ee0d9}</Project>
+      <Private>True</Private>
+      <PackageToBundle>True</PackageToBundle>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Discovery.Templates.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>
